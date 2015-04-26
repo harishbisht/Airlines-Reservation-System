@@ -1,0 +1,104 @@
+Dim oconn As New ADODB.Connection
+Dim rs As New ADODB.Recordset
+Dim strSQL As String
+strSQL = "SELECT * FROM EMPLOYEES"
+Set oconn = New ADODB.Connection
+oconn.Open "Provider=msdaora;Data Source=John.world;User Id=jsmiley;
+Password=neveruseyourdogsnameasyourpassword;"
+rs.CursorType = adOpenStatic
+rs.CursorLocation = adUseClient
+rs.LockType = adLockOptimistic
+rs.Open strSQL, oconn, , , adCmdText
+Set DataGrid1.DataSource = rs
+
+
+
+
+
+
+
+<recordset>.recordsource="create table <whatever>"
+2	<recordset>.open
+3	...code follows...
+
+
+****************************************
+*****************************************
+how to create sql database in visual basic (6.0)
+
+    I have create this little code but have a few questions:
+    1) where (if is required) i insert nothing Statement
+    2) I have set the filed in test as "varchar" and i donk know other... Existis a guide or a list of statement to set the fileds, for example corect sintiax for time, unique di, no null ecc...
+
+
+    Private Sub Command1_Click()
+
+    Dim objConn As ADODB.Connection
+    Set objConn = New ADODB.Connection
+
+    objConn.ConnectionString = "driver={SQL Server};server=DVD377-14D9E48CSQLEXPRESS;uid=;pwd=;database=master"
+    objConn.Open
+
+    objConn.Execute "CREATE DATABASE DATABASE15"
+    objConn.Close
+
+    objConn.ConnectionString = "driver={SQL Server};server=DVD377-14D9E48CSQLEXPRESS;uid=;pwd=;database=DATABASE15"
+    objConn.Open
+
+    'objConn.Execute "Create TABLE TABLE07" _
+    & "(NAME varchar(30), AGE int)"
+
+    objConn.Execute "Create TABLE TABLE07 (NAME varchar(30), NAME1 varchar(30))"
+
+    objConn.Close
+
+
+    End Sub 
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************8
+***********************************************************
+
+3********************code
+
+
+
+Set dbConn = New ADODB.Connection
+With dbConn
+    .Provider = "OraOLEDB.Oracle"
+    .Properties("Data Source") = "DatabaseName"
+    .Properties("User Id") = "someuser"
+    .Properties("Password") = "somepassword"
+    .Open
+End With
+
+
+
+****************************
+*******************************
+4******************************
+ORADataControl.Connect = "scott/tiger"
+
+'Set the database name.
+
+ORADataControl.DatabaseName = "ExampleDb"
+
+'Set the record source.
+
+ORADataControl.RecordSource = "select * from emp"
+
+'Refresh the data control.
+
+ORADataControl.Refresh
+
+...

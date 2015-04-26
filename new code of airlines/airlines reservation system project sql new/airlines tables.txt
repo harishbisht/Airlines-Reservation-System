@@ -1,0 +1,70 @@
+main sql namme  airlines_data
+
+
+/*
+
+create table cust_data (email_id varchar(40),password varchar(20),title varchar(4),
+                  first_name varchar(20),last_name varchar(20),date_of_birth_day number(2)
+               ,date_of_birth_month char(4),date_of_birth_year number(4),mobile_no char(15)
+                ,address_line_one varchar(50),address_line_two varchar(50),city varchar(15)
+                ,state varchar(10),country varchar(15),pincode varchar(8));
+
+
+*/  /// this is for when we work on online airlines reservation
+
+
+
+create table flight_data(flight_company varchar(15),depart_city varchar(10),arrival_city varchar(10)
+                        ,depart_date date,depart_hour number(3),depart_minute number(3)
+                        ,eco_no_of_seat number(4),eco_price number(10),busi_no_of_seat number(4),
+                        busi_price number(10), flight_no varchar(15));
+
+
+
+
+
+
+db.Execute "Create TABLE cust_data (title varchar(4),first_name varchar(20),last_name varchar(20),date_of_birth_day number(2),date_of_birth_month char(4),date_of_birth_year number(4),mobile_no char(15),address_line_one varchar(50),address_line_two varchar(50),city varchar(10),state varchar(15),country varchar(15),pincode char(8),pnr_no varchar(20),flight_no varchar(15),cabin varchar(10))"
+
+
+db.Execute "create table flight_data(flight_company varchar(15),depart_city varchar(10),arrival_city varchar(10),depart_date varchar(10),depart_hour number(3),depart_minute number(3),eco_no_of_seat number(4),eco_price varchar(10),busi_no_of_seat number(4),busi_price varchar(10),flight_no varchar(15) primary key)"
+
+create table login(username varchar(10),password varchar(20))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************************************
+new one
+
+
+cust_info and flight_Data
+
+**********************************
+db.Execute "Create TABLE harish (title varchar(4),first_name varchar(20),last_name varchar(20),date_of_birth_day number(2),date_of_birth_month char(4),date_of_birth_year number(4),mobile_no char(15),address_line_one varchar(50),address_line_two varchar(50),city varchar(10),state varchar(15),country varchar(15),pincode char(8),pnr_no varchar(20),flight_no varchar(15),cabin varchar(10))"
+db.Execute "create table harish1(flight_company varchar(15),depart_city varchar(10),arrival_city varchar(10),depart_date varchar(10),depart_hour number(3),depart_minute number(3),eco_no_of_seat number(4),eco_price varchar(10),busi_no_of_seat number(4),busi_price varchar(10),flight_no varchar(15))"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,401 @@
+Dim db As New ADODB.Connection
+Dim rs1 As New ADODB.Recordset
+Dim rs As New ADODB.Recordset
+
+
+
+Private Sub Command1_Click()
+db.Close
+Unload Form10
+
+End Sub
+
+Private Sub Form_Click()
+'Frame1.Visible = False
+'Frame2.Visible = False
+Image7.Visible = False
+End Sub
+
+Private Sub Form_Load()
+On Error GoTo err_h:
+db.ConnectionString = "dsn=airlines_data;uid=" & user_name & ";pwd=" & pass_word & " "
+'db.ConnectionString = "dsn=airlines_data;uid=system;pwd=harish"
+
+db.Open
+rs.Open "select * from flight_data", db, adOpenDynamic, adLockOptimistic, adCmdText
+rs1.Open "select * from cust_data", db, adOpenDynamic, adLockOptimistic, adCmdText
+
+Command1.Picture = ImageList1.ListImages(7).Picture
+Image1.Picture = ImageList1.ListImages(1).Picture
+Image2.Picture = ImageList1.ListImages(3).Picture
+Image3.Picture = ImageList1.ListImages(4).Picture
+Image4.Picture = ImageList1.ListImages(6).Picture
+Image5.Picture = ImageList1.ListImages(8).Picture
+Image6.Picture = ImageList1.ListImages(8).Picture
+Image7.Picture = ImageList1.ListImages(9).Picture
+search.Picture = ImageList1.ListImages(10).Picture
+Image8.Picture = ImageList1.ListImages(11).Picture
+Call treeview_data
+Exit Sub
+err_h:
+MsgBox "error occureed while connecting to the database", vbInformation
+Unload Form10
+
+
+End Sub
+
+Public Function treeview_data()
+On Error GoTo err_h:
+Dim i As Integer, j As Integer, k As Integer, l As Integer, m As Integer
+Dim Data As Node
+Set Data = TreeView1.Nodes.Add
+Data.Image = 2
+TreeView1.Nodes(1).Text = "Flight"
+i = 0
+Do While (Not rs.EOF)
+i = i + 1
+rs.MoveNext
+Loop
+rs.MoveFirst
+
+'Text1.Text = i
+
+Dim node1() As Node
+ReDim node1(i) As Node
+Dim temparray() As String
+ReDim temparray(i) As String
+m = 0
+For j = 1 To i
+    For k = 0 To m
+      If (temparray(k) = rs.Fields(3)) Then
+      l = 1
+      End If
+     Next k
+      If l = 0 Then
+      Set node1(j) = TreeView1.Nodes.Add(Data, tvwChild, , rs.Fields(3))
+      'TreeView1.node1(j).Image = 1
+      node1(j).Image = 1
+      temparray(m) = rs.Fields(3)
+      m = m + 1
+      End If
+    rs.MoveNext
+    l = 0
+Next j
+
+TreeView1.Nodes(1).Sorted = True
+'***************************************************************************
+rs.MoveFirst
+
+Dim children1 As Integer
+children1 = TreeView1.Nodes(1).Children
+Dim node2() As Node
+ReDim node2(children1) As Node
+i = 0
+Do While (Not rs.EOF)
+i = i + 1
+rs.MoveNext
+Loop
+
+
+Dim z As Integer
+rs.MoveFirst
+
+For z = 1 To children1
+rs.MoveFirst
+ReDim temparray(i) As String
+  m = 0
+  l = 0
+  For j = 1 To i
+
+     For k = 0 To m 'problem change to i
+      If (temparray(k) = (rs.Fields(1) + " " + "To" + " " + rs.Fields(2))) Then
+      l = 1
+      End If
+     Next k
+     
+     If l = 0 And (rs.Fields(3) = TreeView1.Nodes.Item(z + 1)) Then
+     
+      Set node2(z) = TreeView1.Nodes.Add(TreeView1.Nodes.Item(z + 1), tvwChild, , rs.Fields(1) + " " + "To" + " " + rs.Fields(2))
+       node2(z).Image = 3
+      temparray(m) = rs.Fields(1) + " " + "To" + " " + rs.Fields(2)
+      m = m + 1 'problem so remove
+     End If
+      
+     l = 0
+     rs.MoveNext
+Next j
+Next z
+
+'********************************************************************8
+'Text1.Text = TreeView1.Nodes(1).Child.Children  //5 child of dates
+'Text1.Text = TreeView1.Nodes.Item(1).Children /4 dates
+'Text1.Text = TreeView1.Nodes(1).Child.Child.Text/new delhi to gao
+'Text1.Text = TreeView1.Nodes(1).Child.Next.Text/2/26/2012
+'Text1.Text = TreeView1.Nodes(1).Child.Child.Next//chennai to newdelhi
+'Text1.Text = TreeView1.Nodes.Count //13
+'Text1.Text = TreeView1.Nodes(2).Child.Child.FullPath
+'TreeView1.Nodes(1).Child.Child.FullPath
+'TreeView1.Nodes.Item(1).Sorted = True
+
+children1 = TreeView1.Nodes(1).Children
+children1 = TreeView1.Nodes.Count - children1 - 1
+
+Dim node3 As Node
+Dim node4 As Node 'new
+'ReDim node3(children1) As Node
+k = TreeView1.Nodes.Item(1).Children + 2
+'Text1.Text = k
+rs.MoveFirst
+i = 0
+
+'m = TreeView1.Nodes.Item(1).Children '//4 childerns
+m = 0
+For z = 1 To TreeView1.Nodes.Item(1).Children
+ rs.MoveFirst
+ For m = 1 To TreeView1.Nodes.Item(z + 1).Children
+ rs.MoveFirst
+  
+ For j = 1 To TreeView1.Nodes.Item(m).Children
+   rs.MoveFirst
+     Do While (Not rs.EOF)
+  
+       If TreeView1.Nodes.Item(m).Text = rs.Fields(3) Then
+           
+         'If 0 <> InStr(Left(TreeView1.Nodes.Item(k), (InStr(TreeView1.Nodes.Item(k), "To") - 1)), rs.Fields(1)) And 0 <> InStr(Right(TreeView1.Nodes.Item(k), (Len(TreeView1.Nodes.Item(k)) - InStr(TreeView1.Nodes.Item(k), "To") + 1)), rs.Fields(2)) Then
+           If 0 <> InStr(Left(TreeView1.Nodes.Item(k), (InStr(TreeView1.Nodes.Item(k), "To") - 2)), rs.Fields(1)) And 0 <> InStr(Right(TreeView1.Nodes.Item(k), (Len(TreeView1.Nodes.Item(k)) - InStr(TreeView1.Nodes.Item(k), "To") - 2)), rs.Fields(2)) Then
+           
+          
+          Set node3 = TreeView1.Nodes.Add(TreeView1.Nodes.Item(k), tvwChild, , rs.Fields(10))
+           node3.Image = 4
+           
+        
+            If rs1.BOF = False Then
+            
+            rs1.MoveFirst
+            End If
+            
+            Do While (Not rs1.EOF)
+           
+              If (rs.Fields(10) = rs1.Fields(14)) Then
+              
+              Set node4 = TreeView1.Nodes.Add(node3, tvwChild, , rs1.Fields(13))
+              node4.Image = 6
+              End If
+              rs1.MoveNext
+              
+               Loop
+            
+                 
+           
+                 
+                 
+                 
+              i = 1
+           ' k = k + 1
+        
+          End If
+        
+        End If
+         
+     rs.MoveNext
+  Loop
+ If i = 1 Then k = k + 1
+Next j
+
+'k = k + 1
+Next m
+Next z
+
+
+'for expend the tree
+TreeView1.Nodes(1).Expanded = True
+Exit Function
+err_h:
+MsgBox " error while connecting to database"
+
+
+End Function
+
+
+
+
+
+Private Sub Image5_Click()
+Frame1.Visible = False
+Frame2.Visible = False
+End Sub
+
+Private Sub Image6_Click()
+Frame1.Visible = False
+Frame2.Visible = False
+End Sub
+
+Private Sub search_Click()
+On Error GoTo err_h:
+
+TreeView1.Refresh
+TreeView1.Nodes(1).Expanded = False
+
+Dim v As Integer, ul As Integer
+v = 0
+ul = 0
+If Option1.Value = True Then
+  For v = 1 To TreeView1.Nodes.Count
+  If (Text1.Text = TreeView1.Nodes.Item(v)) Then
+  'MsgBox "found"
+  TreeView1.Nodes(1).Expanded = True
+  'TreeView1.Nodes(1).Child.Expanded = True
+  'TreeView1.Nodes(v).Expanded = True
+  'TreeView1.Nodes.Item(v).Expanded = True
+  'TreeView1.Nodes.Item(v).FirstSibling.FirstSibling.FirstSibling.Expanded = True
+  TreeView1.Nodes.Item(v).FirstSibling.Parent.Expanded = True
+  TreeView1.Nodes.Item(v).FirstSibling.Parent.FirstSibling.Parent.Expanded = True
+  TreeView1.Nodes.Item(v).BackColor = RGB(9, 115, 103)
+  TreeView1.Nodes.Item(v).ForeColor = RGB(250, 250, 250)
+  ul = 1
+ 
+  Exit Sub
+  End If
+  Next v
+
+If (ul = 0) Then Image7.Visible = True
+'MsgBox "harish"
+
+End If
+'************************************8
+
+If Option2.Value = True Then
+ For v = 1 To TreeView1.Nodes.Count
+  If (Text1.Text = TreeView1.Nodes.Item(v)) Then
+  'MsgBox "found"
+  TreeView1.Nodes(1).Expanded = True
+  'TreeView1.Nodes(1).Child.Expanded = True
+  'TreeView1.Nodes(v).Expanded = True
+  'TreeView1.Nodes.Item(v).Expanded = True
+  'TreeView1.Nodes.Item(v).FirstSibling.FirstSibling.FirstSibling.Expanded = True
+  TreeView1.Nodes.Item(v).FirstSibling.Parent.Expanded = True
+  TreeView1.Nodes.Item(v).FirstSibling.Parent.FirstSibling.Parent.Expanded = True
+  TreeView1.Nodes.Item(v).FirstSibling.Parent.FirstSibling.Parent.FirstSibling.Parent.Expanded = True
+  TreeView1.Nodes.Item(v).BackColor = RGB(9, 115, 103)
+  TreeView1.Nodes.Item(v).ForeColor = RGB(250, 250, 250)
+  ul = 1
+  Exit Sub
+  End If
+  Next v
+If (ul = 0) Then Image7.Visible = True
+
+
+'MsgBox "harish"
+End If
+
+
+
+Exit Sub
+err_h:
+MsgBox "error occureed while connecting to the database", vbInformation
+
+End Sub
+
+Private Sub Text1_Click()
+Image7.Visible = False
+End Sub
+
+Private Sub TreeView1_NodeClick(ByVal Node As MSComctlLib.Node)
+On Error Resume Next
+'Text1.Text = Node.Text
+'Text2.Text = Node.FullPath
+
+
+'If TreeView1.Nodes(1).Child.Expanded = True Then
+'MsgBox "SDfasf"
+'End If
+
+If Node.Image = 4 Then
+Frame1.Visible = True
+Frame2.Visible = False
+rs.MoveFirst
+
+Do While (Not rs.EOF)
+If rs.Fields(10) = Node.Text Then
+
+ Label2.Caption = rs.Fields(0)
+ Label4.Caption = rs.Fields(1)
+ Label6.Caption = rs.Fields(2)
+ Label8.Caption = rs.Fields(3)
+ Label10.Caption = rs.Fields(4)
+ Label11.Caption = rs.Fields(5)
+ Label13.Caption = rs.Fields(6)
+ Label15.Caption = rs.Fields(7)
+ Label17.Caption = rs.Fields(8)
+ Label19.Caption = rs.Fields(9)
+ Label21.Caption = rs.Fields(10)
+ Exit Sub
+ End If
+rs.MoveNext
+
+Loop
+End If
+
+
+
+'**********************************
+Label26.Caption = ""
+Label27.Caption = ""
+Label28.Caption = ""
+Label34.Caption = ""
+
+
+
+If Node.Image = 6 Then
+Frame1.Visible = False
+Frame2.Visible = True
+rs1.MoveFirst
+Do While (Not rs1.EOF)
+If rs1.Fields(13) = Node.Text Then
+
+Label22.Caption = rs1.Fields(0)
+
+Label23.Caption = rs1.Fields(1)
+Label24.Caption = rs1.Fields(2)
+
+Label26.Caption = rs1.Fields(3)
+Label27.Caption = rs1.Fields(4)
+Label28.Caption = rs1.Fields(5)
+
+
+
+
+Label30.Caption = rs1.Fields(6)
+Label32.Caption = rs1.Fields(7)
+
+
+Label34.Caption = rs1.Fields(8)
+
+Label36.Caption = rs1.Fields(9)
+Label38.Caption = rs1.Fields(10)
+Label40.Caption = rs1.Fields(11)
+Label42.Caption = rs1.Fields(12)
+Label44.Caption = rs1.Fields(13)
+Label46.Caption = rs1.Fields(14)
+
+
+
+ 
+ Exit Sub
+ End If
+rs1.MoveNext
+
+Loop
+
+
+
+
+End If
+
+
+
+End Sub
+
+
+
+

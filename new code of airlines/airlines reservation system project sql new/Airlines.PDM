@@ -1,0 +1,276 @@
+[Root]
+Most Recent Package=airlines reservation by Harish
+Most Recent Deploy=airlines
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=
+C:\Program Files\NetMeeting\conf.exe=
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\COMCT332.OCX=
+C:\WINDOWS\system32\MSCAL.OCX=
+
+[Package|Standard Setup Package 1|Files Added]
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\MSDBRPTR.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\Program Files\NetMeeting\conf.exe=Yes
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=Yes
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=Yes
+C:\WINDOWS\system32\MSCAL.OCX=Yes
+C:\WINDOWS\system32\COMCT332.OCX=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\Program Files\Common Files\designer\MSDERUN.DLL=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\Program Files\Common Files\designer\MSCDRUN.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.ocx=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(WinSysPath)
+C:\Program Files\NetMeeting\conf.exe=$(AppPath)
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCAL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\Program Files\Common Files\designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\Program Files\Common Files\designer\MSCDRUN.DLL=$(CommonFiles)\Designer
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.ocx=$(AppPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=$(AppPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.exe=Yes
+C:\Program Files\NetMeeting\conf.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.ocx=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=Yes
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=Airlines Reservation System
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=Airlines
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder
+ProjectFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new
+ServerSideCab=
+File1=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder\setup.exe
+File2=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder\Setup.Lst
+File3=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder\airlines.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Deploy|Folder Deployment 1|Root]
+Package=Standard Setup Package 1
+Handler=PDWizard.FolderDplySubWiz
+Folder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder
+
+[Deploy|airlines|Root]
+Package=Standard Setup Package 1
+Handler=PDWizard.FolderDplySubWiz
+Folder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\New Folder
+
+
+[Package|airlines reservation by Harish|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\setup of airlines reservation
+
+[Package|airlines reservation by Harish|Configure DAO ISAMs]
+Applicable=No
+
+[Package|airlines reservation by Harish|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|airlines reservation by Harish|Files Found]
+
+[Package|airlines reservation by Harish|Files Released]
+
+[Package|airlines reservation by Harish|Missing Dependency Information]
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=
+C:\Program Files\NetMeeting\conf.exe=
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=
+
+[Package|airlines reservation by Harish|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\COMCT332.OCX=
+C:\WINDOWS\system32\MSCAL.OCX=
+
+[Package|airlines reservation by Harish|Files Added]
+c:\documents and settings\administrator\desktop\airlines reservation system project sql new\airlines.dll=
+
+[Package|airlines reservation by Harish|Files Removed]
+
+[Package|airlines reservation by Harish|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\MSDBRPTR.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\Program Files\NetMeeting\conf.exe=Yes
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=Yes
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=Yes
+C:\WINDOWS\system32\MSCAL.OCX=Yes
+C:\WINDOWS\system32\COMCT332.OCX=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\Program Files\Common Files\designer\MSDERUN.DLL=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\Program Files\Common Files\designer\MSCDRUN.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.exe=Yes
+C:\WINDOWS\system32\dao360.dll=Yes
+
+[Package|airlines reservation by Harish|Configure Registry Files]
+Applicable=No
+
+[Package|airlines reservation by Harish|Configure Remote Servers]
+Applicable=No
+
+[Package|airlines reservation by Harish|Install Locations]
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(WinSysPath)
+C:\Program Files\NetMeeting\conf.exe=$(AppPath)
+C:\oraclexe\app\oracle\product\10.2.0\server\BIN\OraOLEDB10.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\Common\Tools\APE\ODBCTOOL.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCAL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\Program Files\Common Files\designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\Program Files\Common Files\designer\MSCDRUN.DLL=$(CommonFiles)\Designer
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.ocx=$(AppPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=$(AppPath)
+C:\WINDOWS\system32\dao360.dll=$(WinSysPath)
+
+[Package|airlines reservation by Harish|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.exe=Yes
+C:\Program Files\NetMeeting\conf.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.ocx=Yes
+C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\airlines.dll=Yes
+
+[Package|airlines reservation by Harish|Distribution]
+Type=single
+Size=
+Title=Minor project "Airlines Reservation System" by Harish
+
+[Package|airlines reservation by Harish|IconGroups]
+Group0=Airlines
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|airlines reservation by Harish|Package]
+PackageFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\setup of airlines reservation
+ProjectFolder=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new
+ServerSideCab=
+File1=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\setup of airlines reservation\setup.exe
+File2=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\setup of airlines reservation\Setup.Lst
+File3=C:\Documents and Settings\Administrator\Desktop\airlines reservation system project sql new\setup of airlines reservation\airlines.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
